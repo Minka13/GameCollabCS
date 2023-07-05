@@ -273,7 +273,7 @@ GameObject:
   - component: {fileID: 800128248}
   - component: {fileID: 800128247}
   - component: {fileID: 800128246}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -614,6 +614,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 7
+  groundDrag: 5
+  playerHeight: 2
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 8
   orientation: {fileID: 930077279}
 --- !u!1 &1229088367
 GameObject:
