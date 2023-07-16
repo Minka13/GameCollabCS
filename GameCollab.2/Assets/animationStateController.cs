@@ -20,13 +20,16 @@ public class animationStateController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         bool isWalking = animator.GetBool(isWalkingHash);
+
+        bool isSprinting = animator.GetBool("isSprinting");
 
         bool forwardPressed = Input.GetKey("w") | Input.GetKey("s") | Input.GetKey("a") | Input.GetKey("d");
 
         bool JumpPressed = Input.GetKey("space");
 
-        bool Idle = Input.GetKey(KeyCode.None);
+        bool SprintPressed = Input.GetKey("left shift");
 
         if (!isWalking && forwardPressed && !JumpPressed)
         {
@@ -43,6 +46,14 @@ public class animationStateController : MonoBehaviour
         if (isWalking && !forwardPressed)
         {
             animator.SetBool(isWalkingHash, false);
+        }
+        if(!isSprinting && (forwardPressed && SprintPressed))
+        {
+            animator.SetBool("isSprinting", true);
+        }
+        if(isSprinting && (!forwardPressed || !SprintPressed))
+        {
+            animator.SetBool("isSprinting", false);
         }
     }
 }
