@@ -79,6 +79,10 @@ namespace StarterAssets
         public float xSensitivity;
         public float ySensitivity;
 
+        private int Number = 0;
+
+        
+
 
 
         // cinemachine
@@ -161,6 +165,21 @@ namespace StarterAssets
         private void Update()
         {
             _hasAnimator = TryGetComponent(out _animator);
+
+            if(Input.GetKey(KeyCode.R))
+            {
+               if(Number == 0)
+                {
+                    Cursor.lockState = CursorLockMode.Locked;
+                    Number = 1;
+                }
+               else if(Number == 1)
+                {
+                    Cursor.lockState = CursorLockMode.None;
+                    Number = 0;
+                }
+
+            }
 
             JumpAndGravity();
             GroundedCheck();
