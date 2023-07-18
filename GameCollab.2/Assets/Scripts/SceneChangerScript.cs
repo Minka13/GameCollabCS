@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 
-public class CutscenetoGameIntro : MonoBehaviour
+public class SceneChangerScript : MonoBehaviour
 {
     [SerializeField]
     public float DelayBeforeLoading;
@@ -20,7 +20,7 @@ public class CutscenetoGameIntro : MonoBehaviour
     {
         TimeElapsed += Time.deltaTime;
 
-        if(TimeElapsed > DelayBeforeLoading)
+        if (TimeElapsed > DelayBeforeLoading)
         {
             SceneManager.LoadScene(SceneNameToLoad);
         }
